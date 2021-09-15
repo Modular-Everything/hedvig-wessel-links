@@ -15,7 +15,6 @@
     "build": "frontity build",
     "serve": "frontity serve"
   },
-  "prettier": {},
   "dependencies": {
     "@frontity/core": "^1.14.3",
     "@frontity/html2react": "^1.7.0",
@@ -29,10 +28,13 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-property-sort-order-smacss": "^7.1.0",
+    "stylelint-order": "^4.1.0"
   }
 }
