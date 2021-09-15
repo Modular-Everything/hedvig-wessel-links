@@ -4,8 +4,7 @@ import { styled } from 'frontity';
 
 // ---
 
-const Header = ({ title, bio }) => {
-  return (
+const Header = ({ title, bio }) => (
     <HeaderWrap>
       <Logo>
       <h1>{title}</h1>
@@ -13,7 +12,6 @@ const Header = ({ title, bio }) => {
       <p>{bio}</p>
     </HeaderWrap>
   )
-}
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
