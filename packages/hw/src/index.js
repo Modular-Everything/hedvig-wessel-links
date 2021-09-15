@@ -1,8 +1,7 @@
 const Root = () => {
   return (
     <>
-      You can edit your package in:
-      <pre>packages/hw/src/index.js</pre>
+      <h1>Nice</h1>
     </>
   );
 };
