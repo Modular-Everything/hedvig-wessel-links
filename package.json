@@ -24,5 +24,8 @@
     "@frontity/wp-source": "^1.11.5",
     "frontity": "^1.17.0",
     "hw": "file:packages/hw"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0"
   }
 }
