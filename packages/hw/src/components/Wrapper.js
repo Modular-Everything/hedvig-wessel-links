@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import { styled, connect } from "frontity";
 
 import Header from "./Header";
+import Links from "./Links";
 
 // ---
 
-const Wrapper = ({ state, libraries }) => {
+const Wrapper = ({ libraries }) => {
   const [data, setData] = useState(null);
 
   async function getData() {
@@ -18,24 +19,29 @@ const Wrapper = ({ state, libraries }) => {
   }
 
   useEffect(() => {
+    if (!libraries) return null;
     getData();
   }, []);
 
   if (!data) return <p>Loading...</p>;
-
-  console.log(data);
 
   const { acf } = data;
 
   return (
     <Container>
       <Header title={acf.title} bio={acf.bio} />
+
+      {acf.links.length > 0 && <Links links={acf.links} />}
     </Container>
   );
 };
 
 Wrapper.propTypes = {
-  state: PropTypes.object.isRequired,
+  libraries: PropTypes.object,
+};
+
+Wrapper.defaultProps = {
+  libraries: null,
 };
 
 export default connect(Wrapper);
@@ -45,7 +51,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 80rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 1.6rem;
 `;
