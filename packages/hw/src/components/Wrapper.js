@@ -1,18 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { styled } from "frontity";
+import { styled, connect } from "frontity";
+
+import Header from "./Header";
 
 // ---
 
-const Wrapper = ({ children }) => {
-  return <Container>{children}</Container>;
+const Wrapper = ({ state, libraries }) => {
+  const [data, setData] = useState(null);
+
+  async function getData() {
+    const res = await libraries.source.api.get({
+      endpoint: "pages/139",
+    });
+    const parsedRes = await res.json();
+    setData(parsedRes);
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (!data) return <p>Loading...</p>;
+
+  console.log(data);
+
+  const { acf } = data;
+
+  return (
+    <Container>
+      <Header title={acf.title} bio={acf.bio} />
+    </Container>
+  );
 };
 
 Wrapper.propTypes = {
-  children: PropTypes.node.isRequired,
+  state: PropTypes.object.isRequired,
 };
 
-export default Wrapper;
+export default connect(Wrapper);
 
 const Container = styled.div`
   display: flex;
