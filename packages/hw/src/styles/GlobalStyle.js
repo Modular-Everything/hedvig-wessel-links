@@ -11,6 +11,7 @@ const GlobalStyle = () => {
         ${normalize}
 
         :root {
+          --white: #ffffff;
           --grey: #cac8c8;
           --blue: #161a31;
           --purple: #9275a2;
