@@ -23,7 +23,8 @@
     "@frontity/wp-source": "^1.11.5",
     "frontity": "^1.17.0",
     "hw": "file:packages/hw",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

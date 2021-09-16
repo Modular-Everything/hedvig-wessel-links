@@ -1,20 +1,38 @@
+import GlobalStyle from "./styles/GlobalStyle";
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import Background from "./components/Background";
+
+// ---
+
 const Root = () => {
   return (
     <>
-      <h1>Nice</h1>
+      <GlobalStyle />
+
+      <Wrapper>
+        <Header
+          title="Hedvig Wessel"
+          bio="I want to promote an active and healthy lifestyle by showing my everyday life as a professional athlete."
+        />
+      </Wrapper>
+
+      <Background />
     </>
   );
 };
 
+// ---
+
 export default {
   name: "hw",
   roots: {
-    hw: Root
+    hw: Root,
   },
   state: {
-    hw: {}
+    hw: {},
   },
   actions: {
-    hw: {}
-  }
+    hw: {},
+  },
 };
