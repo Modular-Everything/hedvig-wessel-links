@@ -15,7 +15,7 @@ const Background = () => {
 export default Background;
 
 const BackgroundWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
   right: 0;
