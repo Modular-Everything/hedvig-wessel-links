@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { styled } from "frontity";
+import { connect, styled } from "frontity";
 
 // ---
 
-const Newsletter = ({ title, submitLabel, footerText, endpoint }) => {
+const Newsletter = ({
+  title,
+  submitLabel,
+  footerText,
+  endpoint,
+  libraries,
+}) => {
   // const [active, setActive] = useState(null);
 
   // useEffect(() => {
@@ -12,6 +18,8 @@ const Newsletter = ({ title, submitLabel, footerText, endpoint }) => {
   // }, [active]);
 
   if (!endpoint) return null;
+
+  const Html2React = libraries.html2react.Component;
 
   return (
     <NewsletterWrap>
@@ -42,7 +50,11 @@ const Newsletter = ({ title, submitLabel, footerText, endpoint }) => {
         <Button type="submit">{submitLabel}</Button>
       </form>
 
-      {footerText && <FooterText>{footerText}</FooterText>}
+      {footerText && (
+        <FooterText>
+          <Html2React html={footerText} />
+        </FooterText>
+      )}
     </NewsletterWrap>
   );
 };
@@ -59,12 +71,16 @@ Newsletter.defaultProps = {
   endpoint: null,
 };
 
-export default Newsletter;
+export default connect(Newsletter);
 
 const NewsletterWrap = styled.div`
   width: calc(100% - 3.2rem);
   padding: 3.2rem 1.6rem;
   background-color: var(--pink);
+
+  p {
+    margin: 0;
+  }
 
   h3 {
     margin: 0;

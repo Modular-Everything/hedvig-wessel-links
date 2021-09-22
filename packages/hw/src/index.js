@@ -1,3 +1,4 @@
+import link from "@frontity/html2react/processors/link";
 import GlobalStyle from "./styles/GlobalStyle";
 import Wrapper from "./components/Wrapper";
 import Background from "./components/Background";
@@ -26,5 +27,10 @@ export default {
   },
   actions: {
     hw: {},
+  },
+  libraries: {
+    html2react: {
+      processors: [link],
+    },
   },
 };
