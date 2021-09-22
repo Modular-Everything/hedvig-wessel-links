@@ -5,6 +5,7 @@ import { styled, connect } from "frontity";
 import Header from "./Header";
 import Links from "./Links";
 import Collage from "./Collage";
+import Newsletter from "./Newsletter";
 
 // ---
 
@@ -39,6 +40,13 @@ const Wrapper = ({ libraries }) => {
       <Collage
         background={acf.collage_images.background}
         foreground={acf.collage_images.foreground}
+      />
+
+      <Newsletter
+        title={acf.newsletter.newsletter_title}
+        submitLabel={acf.newsletter.newsletter_submit_text}
+        footerText={acf.newsletter.newsletter_footer_text}
+        endpoint="mailchimp_xxxx"
       />
     </Container>
   );
