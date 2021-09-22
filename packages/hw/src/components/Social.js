@@ -51,7 +51,7 @@ const SocialWrap = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 3.2rem 0;
+  margin: 3.2rem 0 0 0;
   padding: 0;
   list-style: none;
 
@@ -71,7 +71,13 @@ const SocialWrap = styled.ul`
   }
 
   a {
+    transition: 250ms ease opacity;
+    opacity: 1;
     color: var(--blue);
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `;
