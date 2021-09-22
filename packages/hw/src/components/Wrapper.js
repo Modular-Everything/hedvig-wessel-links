@@ -29,7 +29,7 @@ const Wrapper = ({ libraries }) => {
 
   return (
     <Container>
-      <Header title={acf.title} bio={acf.bio} />
+      <Header title={acf.title} bio={acf.bio} image={acf.bio_image} />
 
       {acf.links.length > 0 && <Links links={acf.links} />}
     </Container>

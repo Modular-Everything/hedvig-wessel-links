@@ -5,7 +5,7 @@ import Image from "@frontity/components/image";
 
 // ---
 
-const Media = ({ libraries, id }) => {
+const Media = ({ libraries, id, className }) => {
   const [media, setMedia] = useState(null);
 
   async function getMedia() {
@@ -41,6 +41,7 @@ const Media = ({ libraries, id }) => {
       alt={media.title.rendered}
       width={media?.media_details?.width}
       height={media?.media_details?.height}
+      className={className}
     />
   );
 };
@@ -48,10 +49,12 @@ const Media = ({ libraries, id }) => {
 Media.propTypes = {
   libraries: PropTypes.object,
   id: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };
 
 Media.defaultProps = {
   libraries: null,
+  className: null,
 };
 
 export default connect(Media);

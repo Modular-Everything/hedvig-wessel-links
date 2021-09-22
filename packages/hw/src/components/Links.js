@@ -34,6 +34,8 @@ export default Links;
 
 const LinksWrapper = styled.section`
   display: flex;
+  position: relative;
+  z-index: 20;
   flex-direction: column;
 
   & > a {
