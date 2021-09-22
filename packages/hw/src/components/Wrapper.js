@@ -6,6 +6,7 @@ import Header from "./Header";
 import Links from "./Links";
 import Collage from "./Collage";
 import Newsletter from "./Newsletter";
+import Social from "./Social";
 
 // ---
 
@@ -48,6 +49,8 @@ const Wrapper = ({ libraries }) => {
         footerText={acf.newsletter.newsletter_footer_text}
         endpoint="mailchimp_xxxx"
       />
+
+      <Social platforms={acf.social_links} />
     </Container>
   );
 };

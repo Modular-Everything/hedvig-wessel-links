@@ -24,6 +24,7 @@
     "frontity": "^1.17.0",
     "hw": "file:packages/hw",
     "prop-types": "^15.7.2",
+    "react-icons": "^4.2.0",
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
