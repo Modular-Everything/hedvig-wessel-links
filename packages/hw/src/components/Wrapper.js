@@ -7,6 +7,7 @@ import Links from "./Links";
 import Collage from "./Collage";
 import Newsletter from "./Newsletter";
 import Social from "./Social";
+import Footer from "./Footer";
 
 // ---
 
@@ -51,6 +52,8 @@ const Wrapper = ({ libraries }) => {
       />
 
       <Social platforms={acf.social_links} />
+
+      <Footer footerText={acf.footer} />
     </Container>
   );
 };
@@ -72,5 +75,5 @@ const Container = styled.div`
   justify-content: center;
   max-width: 60rem;
   margin: 0 auto;
-  padding: 1.6rem;
+  padding: 1.6rem 1.6rem 3.2rem 1.6rem;
 `;
