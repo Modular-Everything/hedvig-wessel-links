@@ -26,7 +26,7 @@ const Newsletter = ({
       <h3>{title}</h3>
       <form>
         <Input>
-          <label for="name">Your Name</label>
+          <label htmlFor="name">Your Name</label>
           <input
             id="name"
             type="text"
@@ -37,7 +37,7 @@ const Newsletter = ({
         </Input>
 
         <Input>
-          <label for="email">Your Email</label>
+          <label htmlFor="email">Your Email</label>
           <input
             id="email"
             type="text"
