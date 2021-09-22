@@ -4,6 +4,7 @@ import { styled, connect } from "frontity";
 
 import Header from "./Header";
 import Links from "./Links";
+import Collage from "./Collage";
 
 // ---
 
@@ -27,11 +28,18 @@ const Wrapper = ({ libraries }) => {
 
   const { acf } = data;
 
+  console.log(acf);
+
   return (
     <Container>
       <Header title={acf.title} bio={acf.bio} image={acf.bio_image} />
 
       {acf.links.length > 0 && <Links links={acf.links} />}
+
+      <Collage
+        background={acf.collage_images.background}
+        foreground={acf.collage_images.foreground}
+      />
     </Container>
   );
 };
