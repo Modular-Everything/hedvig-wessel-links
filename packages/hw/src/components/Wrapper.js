@@ -34,27 +34,36 @@ const Wrapper = ({ libraries }) => {
   console.log(acf);
 
   return (
-    <Container>
-      <Header title={acf.title} bio={acf.bio} image={acf.bio_image} />
-
-      {acf.links.length > 0 && <Links links={acf.links} />}
-
-      <Collage
-        background={acf.collage_images.background}
-        foreground={acf.collage_images.foreground}
+    <>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+        rel="stylesheet"
       />
 
-      <Newsletter
-        title={acf.newsletter.newsletter_title}
-        submitLabel={acf.newsletter.newsletter_submit_text}
-        footerText={acf.newsletter.newsletter_footer_text}
-        endpoint="mailchimp_xxxx"
-      />
+      <Container>
+        <Header title={acf.title} bio={acf.bio} image={acf.bio_image} />
 
-      <Social platforms={acf.social_links} />
+        {acf.links.length > 0 && <Links links={acf.links} />}
 
-      <Footer footerText={acf.footer} />
-    </Container>
+        <Collage
+          background={acf.collage_images.background}
+          foreground={acf.collage_images.foreground}
+        />
+
+        <Newsletter
+          title={acf.newsletter.newsletter_title}
+          submitLabel={acf.newsletter.newsletter_submit_text}
+          footerText={acf.newsletter.newsletter_footer_text}
+          endpoint="mailchimp_xxxx"
+        />
+
+        <Social platforms={acf.social_links} />
+
+        <Footer footerText={acf.footer} />
+      </Container>
+    </>
   );
 };
 

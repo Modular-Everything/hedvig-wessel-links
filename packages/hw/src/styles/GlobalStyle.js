@@ -19,7 +19,7 @@ const GlobalStyle = () => {
 
           --sans: -apple-system, sans-serif, "Apple Color Emoji",
             "Segoe UI Emoji", "Segoe UI Symbol";
-          --mono: monospace;
+          --mono: "Roboto Mono", monospace;
 
           --dev: "modulareverything.com";
         }
