@@ -113,6 +113,7 @@ const Text = styled.div`
 
   p {
     margin: 0.8rem 0 0 0;
+    font-family: var(--mono);
     font-size: 1.4rem;
     line-height: 2rem;
   }

@@ -16,17 +16,22 @@ const GlobalStyle = () => {
           --blue: #161a31;
           --purple: #9275a2;
           --pink: #e78a8f;
+
+          --sans: -apple-system, sans-serif, "Apple Color Emoji",
+            "Segoe UI Emoji", "Segoe UI Symbol";
+          --mono: monospace;
+
           --dev: "modulareverything.com";
         }
 
         html {
-          font-family: system-ui, Verdana, Arial, sans-serif;
           font-size: 10px;
         }
 
         body {
           background-color: var(--grey);
           color: var(--blue);
+          font-family: var(--sans);
           font-size: 2rem;
         }
       `}

@@ -30,13 +30,6 @@ export default Header;
 const HeaderWrap = styled.header`
   position: relative;
   z-index: 20;
-
-  p {
-    margin: 0;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    text-align: right;
-  }
 `;
 
 const LogoWrap = styled.div`
@@ -61,7 +54,11 @@ const BioWrap = styled.div`
     position: relative;
     z-index: 10;
     width: 85%;
-    margin-left: auto;
+    margin: 0 0 0 auto;
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: right;
   }
 
   .image {
