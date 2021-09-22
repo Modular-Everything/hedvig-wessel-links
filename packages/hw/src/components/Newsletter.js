@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { styled } from "frontity";
 
 // ---
 
 const Newsletter = ({ title, submitLabel, footerText, endpoint }) => {
+  // const [active, setActive] = useState(null);
+
+  // useEffect(() => {
+  //   console.log(active?.target);
+  // }, [active]);
+
   if (!endpoint) return null;
 
   return (
@@ -13,12 +19,24 @@ const Newsletter = ({ title, submitLabel, footerText, endpoint }) => {
       <form>
         <Input>
           <label for="name">Your Name</label>
-          <input id="name" type="text" placeholder="Your Name" />
+          <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            // onFocus={(e) => setActive(e)}
+            // onBlur={() => setActive(null)}
+          />
         </Input>
 
         <Input>
           <label for="email">Your Email</label>
-          <input id="email" type="text" placeholder="Your Email" />
+          <input
+            id="email"
+            type="text"
+            placeholder="Your Email"
+            // onFocus={(e) => setActive(e)}
+            // onBlur={() => setActive(null)}
+          />
         </Input>
 
         <Button type="submit">{submitLabel}</Button>
@@ -79,6 +97,10 @@ const Input = styled.div`
     padding: 1.6rem;
     border: 0;
     background-color: var(--white);
+    color: var(--pink);
+    font-family: var(--mono);
+    font-size: 1.6rem;
+    line-height: 2.2rem;
 
     &:focus {
       outline-color: var(--purple);
@@ -87,6 +109,8 @@ const Input = styled.div`
     &::placeholder {
       opacity: 0.35;
       color: var(--pink);
+      font-family: var(--sans);
+      font-size: 2rem;
       font-weight: 800;
       text-transform: uppercase;
     }
