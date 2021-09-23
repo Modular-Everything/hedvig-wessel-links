@@ -10,6 +10,7 @@ import {
   FaWhatsappSquare as WhatsApp,
   FaFacebookMessenger as Messenger,
 } from "react-icons/fa";
+import AnimateIn from "./AnimateIn";
 
 // ---
 
@@ -27,17 +28,19 @@ const Social = ({ platforms }) => {
   };
 
   return (
-    <SocialWrap>
-      {platforms.map((platform, index) => {
-        return (
-          <li key={index}>
-            <a href={platform.link} target="_blank">
-              {React.createElement(icons[platform.icon])}
-            </a>
-          </li>
-        );
-      })}
-    </SocialWrap>
+    <AnimateIn>
+      <SocialWrap>
+        {platforms.map((platform, index) => {
+          return (
+            <li key={index}>
+              <a href={platform.link} target="_blank">
+                {React.createElement(icons[platform.icon])}
+              </a>
+            </li>
+          );
+        })}
+      </SocialWrap>
+    </AnimateIn>
   );
 };
 

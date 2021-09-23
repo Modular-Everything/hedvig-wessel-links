@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { styled } from "frontity";
 import Logo from "../images/Logo";
+import AnimateIn from "./AnimateIn";
 import Media from "./Media";
 
 // ---
 
 const Header = ({ title, bio, image }) => (
   <HeaderWrap>
+    <AnimateIn>
     <LogoWrap>
       <Logo />
       <h1>{title}</h1>
@@ -17,6 +19,7 @@ const Header = ({ title, bio, image }) => (
       <p>{bio}</p>
       <Media id={image.ID} className="image" />
     </BioWrap>
+    </AnimateIn>
   </HeaderWrap>
 );
 

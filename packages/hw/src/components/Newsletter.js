@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect, styled } from "frontity";
+import AnimateIn from "./AnimateIn";
 
 // ---
 
@@ -73,7 +74,7 @@ Newsletter.defaultProps = {
 
 export default connect(Newsletter);
 
-const NewsletterWrap = styled.div`
+const NewsletterWrap = styled(AnimateIn)`
   width: calc(100% - 3.2rem);
   padding: 3.2rem 1.6rem;
   background-color: var(--pink);
