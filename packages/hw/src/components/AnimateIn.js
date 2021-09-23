@@ -22,7 +22,7 @@ const AnimateIn = ({ children, className }) => {
         opacity: 1,
         y: 0,
         duration: 1,
-        stagger: 0.2,
+        delay: 0.2,
       }
     );
   });
