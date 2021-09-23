@@ -24,6 +24,7 @@
     "frontity": "^1.17.0",
     "gsap": "^3.7.1",
     "hw": "file:packages/hw",
+    "mailchimp-api-v3": "^1.15.0",
     "prop-types": "^15.7.2",
     "react-icons": "^4.2.0",
     "styled-normalize": "^8.0.7"

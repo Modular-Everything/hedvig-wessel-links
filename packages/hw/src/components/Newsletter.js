@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect, styled } from "frontity";
 import AnimateIn from "./AnimateIn";
@@ -12,14 +12,7 @@ const Newsletter = ({
   endpoint,
   libraries,
 }) => {
-  // const [active, setActive] = useState(null);
-
-  // useEffect(() => {
-  //   console.log(active?.target);
-  // }, [active]);
-
   if (!endpoint) return null;
-
   const Html2React = libraries.html2react.Component;
 
   return (
@@ -28,24 +21,12 @@ const Newsletter = ({
       <form>
         <Input>
           <label htmlFor="name">Your Name</label>
-          <input
-            id="name"
-            type="text"
-            placeholder="Your Name"
-            // onFocus={(e) => setActive(e)}
-            // onBlur={() => setActive(null)}
-          />
+          <input id="name" type="text" placeholder="Your Name" />
         </Input>
 
         <Input>
           <label htmlFor="email">Your Email</label>
-          <input
-            id="email"
-            type="text"
-            placeholder="Your Email"
-            // onFocus={(e) => setActive(e)}
-            // onBlur={() => setActive(null)}
-          />
+          <input id="email" type="text" placeholder="Your Email" />
         </Input>
 
         <Button type="submit">{submitLabel}</Button>
