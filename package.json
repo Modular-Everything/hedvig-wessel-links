@@ -22,6 +22,7 @@
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.5",
     "frontity": "^1.17.0",
+    "gsap": "^3.7.1",
     "hw": "file:packages/hw",
     "prop-types": "^15.7.2",
     "react-icons": "^4.2.0",

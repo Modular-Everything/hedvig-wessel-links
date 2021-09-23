@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { styled } from "frontity";
 
+import AnimateIn from "./AnimateIn";
 import Media from "./Media";
 
 // ---
@@ -26,7 +27,7 @@ Collage.propTypes = {
 
 export default Collage;
 
-const CollageWrap = styled.div`
+const CollageWrap = styled(AnimateIn)`
   display: flex;
   position: relative;
   align-items: center;

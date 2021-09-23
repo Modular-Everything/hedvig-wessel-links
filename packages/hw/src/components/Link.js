@@ -1,24 +1,30 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import { styled } from "frontity";
+
+import AnimateIn from "./AnimateIn";
 import Media from "./Media";
 
 // ---
 
 const Link = ({ title, description, thumbnail, link }) => {
-  return (
-    <LinkWrapper href={link} className="no-flip">
-      <Thumbnail className="top">
-        <div className="image-wrapper">
-          {thumbnail !== false && <Media id={thumbnail.ID} />}
-        </div>
-      </Thumbnail>
+  const ref = useRef(null);
 
-      <Text>
-        <h4>{title}</h4>
-        {description && <p>{description}</p>}
-      </Text>
-    </LinkWrapper>
+  return (
+    <AnimateIn>
+      <LinkWrapper href={link} className="no-flip" ref={ref}>
+        <Thumbnail className="top">
+          <div className="image-wrapper">
+            {thumbnail !== false && <Media id={thumbnail.ID} />}
+          </div>
+        </Thumbnail>
+
+        <Text>
+          <h4>{title}</h4>
+          {description && <p>{description}</p>}
+        </Text>
+      </LinkWrapper>
+    </AnimateIn>
   );
 };
 

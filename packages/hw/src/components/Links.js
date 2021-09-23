@@ -38,7 +38,7 @@ const LinksWrapper = styled.section`
   z-index: 20;
   flex-direction: column;
 
-  & > a {
+  & > * {
     margin-bottom: 3.2rem;
 
     &:last-of-type {

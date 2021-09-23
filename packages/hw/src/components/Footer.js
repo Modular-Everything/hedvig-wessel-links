@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect, styled } from "frontity";
 
+import AnimateIn from "./AnimateIn";
+
+// ---
+
 const Footer = ({ footerText, libraries }) => {
   if (!libraries) return null;
 
@@ -9,8 +13,10 @@ const Footer = ({ footerText, libraries }) => {
 
   return (
     <FooterWrap>
-      <Html2React html={footerText} />
-      <p>&copy; {new Date().getFullYear()} Hedvig Wessel</p>
+      <AnimateIn>
+        <Html2React html={footerText} />
+        <p>&copy; {new Date().getFullYear()} Hedvig Wessel</p>
+      </AnimateIn>
     </FooterWrap>
   );
 };
