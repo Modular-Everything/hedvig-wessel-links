@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect, styled } from "frontity";
 
 const Footer = ({ footerText, libraries }) => {
+  if (!libraries) return null;
+
   const Html2React = libraries.html2react.Component;
 
   return (
@@ -15,7 +17,11 @@ const Footer = ({ footerText, libraries }) => {
 
 Footer.propTypes = {
   footerText: PropTypes.string.isRequired,
-  libraries: PropTypes.object.isRequired,
+  libraries: PropTypes.object,
+};
+
+Footer.defaultProps = {
+  libraries: null,
 };
 
 export default connect(Footer);
