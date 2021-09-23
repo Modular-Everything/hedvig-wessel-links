@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { styled, connect } from "frontity";
+import { Head, styled, connect } from "frontity";
 
+import Favicon from "../images/favicon.png";
 import Header from "./Header";
 import Links from "./Links";
 import Collage from "./Collage";
@@ -31,20 +32,22 @@ const Wrapper = ({ libraries }) => {
 
   const { acf } = data;
 
-  console.log(acf);
-
   return (
     <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="true"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-        rel="stylesheet"
-      />
+      <Head>
+        <title>Hedvig Wessel - Links</title>
+        <link href={Favicon} rel="icon" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
 
       <Container>
         <Header title={acf.title} bio={acf.bio} image={acf.bio_image} />
