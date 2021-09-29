@@ -19,6 +19,8 @@ const Links = ({ links }) => {
             description={link?.description}
             thumbnail={link?.thumbnail}
             link={link?.link}
+            color={link?.colour}
+            index={index}
           />
         );
       })}

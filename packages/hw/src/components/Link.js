@@ -7,12 +7,18 @@ import Media from "./Media";
 
 // ---
 
-const Link = ({ title, description, thumbnail, link }) => {
+const Link = ({ title, description, thumbnail, link, color, index }) => {
   const ref = useRef(null);
 
   return (
     <AnimateIn>
-      <LinkWrapper href={link} className="no-flip" ref={ref}>
+      <LinkWrapper
+        href={link}
+        className={index % 2 ? "flip" : "no-flip"}
+        ref={ref}
+        highlightColor={color}
+        flip={index % 2}
+      >
         <Thumbnail className="top">
           <div className="image-wrapper">
             {thumbnail !== false && <Media id={thumbnail.ID} />}
@@ -33,6 +39,8 @@ Link.propTypes = {
   description: PropTypes.string,
   thumbnail: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   link: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 Link.defaultProps = {
@@ -43,10 +51,13 @@ Link.defaultProps = {
 export default Link;
 
 const LinkWrapper = styled.a`
+  --highlight: var(--${({ highlightColor }) => highlightColor});
+
   display: grid;
   grid-gap: 1.6rem;
   grid-template-columns: 8ch minmax(min(50vw, 30ch), 1fr);
   padding: 1.6rem;
+  border: 2px solid var(--highlight);
   background-color: var(--white);
   color: var(--blue);
   text-decoration: none;
@@ -89,6 +100,7 @@ const Thumbnail = styled.div`
     width: 100%;
     overflow: hidden;
     transition: 250ms ease transform;
+    border: 2px solid var(--highlight);
     aspect-ratio: 1/1;
 
     @supports not (aspect-ratio: 1/1) {
