@@ -122,11 +122,18 @@ const Button = styled.button`
   width: 100%;
   margin-top: 1.6rem;
   padding: 1.6rem;
+  transition: 350ms ease opacity;
   border: 1px solid var(--white);
+  opacity: 1;
   background-color: var(--pink);
   color: var(--white);
   font-weight: 800;
   text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
 `;
 
 const FooterText = styled.div`
