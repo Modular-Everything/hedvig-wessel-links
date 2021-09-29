@@ -39,14 +39,24 @@ const Newsletter = ({
       <h3>{title}</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input>
-          <label htmlFor="name">Your Name</label>
+          <label htmlFor="name">First Name</label>
           <input
             id="NAME"
             type="text"
-            placeholder="Your Name"
-            required
+            placeholder="First Name"
             disabled={success}
-            {...register("NAME", { required: true })}
+            {...register("FNAME")}
+          />
+        </Input>
+
+        <Input>
+          <label htmlFor="name">LAST Name</label>
+          <input
+            id="NAME"
+            type="text"
+            placeholder="Last Name"
+            disabled={success}
+            {...register("LNAME")}
           />
         </Input>
 
