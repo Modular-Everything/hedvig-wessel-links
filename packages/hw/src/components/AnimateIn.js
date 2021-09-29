@@ -25,7 +25,7 @@ const AnimateIn = ({ children, className }) => {
         delay: 0.2,
       }
     );
-  });
+  }, []);
 
   return (
     <div ref={ref} className={className}>
@@ -35,7 +35,7 @@ const AnimateIn = ({ children, className }) => {
 };
 
 AnimateIn.propTypes = {
-  ref: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 

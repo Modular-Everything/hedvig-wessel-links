@@ -26,10 +26,12 @@
     "hw": "file:packages/hw",
     "mailchimp-api-v3": "^1.15.0",
     "prop-types": "^15.7.2",
+    "react-hook-form": "^7.16.1",
     "react-icons": "^4.2.0",
     "react-loading-icons": "^1.0.6",
     "styled-components": "^5.3.1",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "use-mailchimp-form": "^2.0.4"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

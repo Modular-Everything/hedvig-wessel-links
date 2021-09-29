@@ -69,7 +69,7 @@ const Wrapper = ({ libraries }) => {
           title={acf.newsletter.newsletter_title}
           submitLabel={acf.newsletter.newsletter_submit_text}
           footerText={acf.newsletter.newsletter_footer_text}
-          endpoint="mailchimp_xxxx"
+          endpoint={acf.newsletter.newsletter_endpoint}
         />
 
         <Social platforms={acf.social_links} />

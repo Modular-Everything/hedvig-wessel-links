@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect, styled } from "frontity";
+import { useMailChimpForm } from "use-mailchimp-form";
+import { useForm } from "react-hook-form";
+
 import AnimateIn from "./AnimateIn";
 
 // ---
@@ -15,21 +18,61 @@ const Newsletter = ({
   if (!endpoint) return null;
   const Html2React = libraries.html2react.Component;
 
+  const {
+    loading,
+    error,
+    success,
+    message,
+    handleSubmit: MailChimpSubmit,
+  } = useMailChimpForm(endpoint);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => MailChimpSubmit(data);
+
   return (
     <NewsletterWrap>
       <h3>{title}</h3>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Input>
           <label htmlFor="name">Your Name</label>
-          <input id="name" type="text" placeholder="Your Name" />
+          <input
+            id="NAME"
+            type="text"
+            placeholder="Your Name"
+            required
+            disabled={success}
+            {...register("NAME", { required: true })}
+          />
         </Input>
 
         <Input>
           <label htmlFor="email">Your Email</label>
-          <input id="email" type="text" placeholder="Your Email" />
+          <input
+            id="EMAIL"
+            type="email"
+            placeholder="Your Email"
+            required
+            disabled={success}
+            {...register("EMAIL", { required: true })}
+          />
         </Input>
 
-        <Button type="submit">{submitLabel}</Button>
+        <Button type="submit" disabled={loading || success}>
+          {submitLabel}
+        </Button>
+
+        {errors.NAME && <span className="alert">Please enter your name</span>}
+        {errors.EMAIL && (
+          <span className="alert">Please enter your email address</span>
+        )}
+        {loading && <span className="alert">Signing you up...</span>}
+        {error && <span className="alert">{message}</span>}
+        {success && <span className="alert">{message}</span>}
       </form>
 
       {footerText && (
@@ -59,6 +102,16 @@ const NewsletterWrap = styled(AnimateIn)`
   width: calc(100% - 3.2rem);
   padding: 3.2rem 1.6rem;
   background-color: var(--pink);
+
+  .alert {
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--white);
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+  }
 
   p {
     margin: 0;
