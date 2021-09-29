@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Head, styled, connect } from "frontity";
+import { Rings } from "react-loading-icons";
 
 import Favicon from "../images/favicon.png";
 import Header from "./Header";
@@ -28,7 +29,12 @@ const Wrapper = ({ libraries }) => {
     getData();
   }, []);
 
-  if (!data) return <p>Loading...</p>;
+  if (!data)
+    return (
+      <Loading>
+        <Rings stroke="var(--purple)" strokeWidth={1} />
+      </Loading>
+    );
 
   const { acf } = data;
 
@@ -92,4 +98,19 @@ const Container = styled.div`
   max-width: 60rem;
   margin: 0 auto;
   padding: 1.6rem 1.6rem 3.2rem 1.6rem;
+`;
+
+const Loading = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  color: var(--blue);
+
+  svg {
+    width: 6rem;
+    height: 6rem;
+  }
 `;

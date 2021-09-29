@@ -27,6 +27,8 @@
     "mailchimp-api-v3": "^1.15.0",
     "prop-types": "^15.7.2",
     "react-icons": "^4.2.0",
+    "react-loading-icons": "^1.0.6",
+    "styled-components": "^5.3.1",
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
