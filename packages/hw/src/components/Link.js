@@ -19,11 +19,13 @@ const Link = ({ title, description, thumbnail, link, color, index }) => {
         highlightColor={color}
         flip={index % 2}
       >
-        <Thumbnail className="top">
-          <div className="image-wrapper">
-            {thumbnail !== false && <Media id={thumbnail.ID} />}
-          </div>
-        </Thumbnail>
+        {thumbnail && (
+          <Thumbnail className="top">
+            <div className="image-wrapper">
+              {thumbnail !== false && <Media id={thumbnail.ID} />}
+            </div>
+          </Thumbnail>
+        )}
 
         <Text>
           <h4>{title}</h4>
@@ -51,7 +53,7 @@ Link.defaultProps = {
 export default Link;
 
 const LinkWrapper = styled.a`
-  --highlight: var(--${({ highlightColor }) => highlightColor});
+  --highlight: ${({ highlightColor }) => highlightColor};
 
   display: grid;
   grid-gap: 1.6rem;
@@ -97,6 +99,7 @@ const Thumbnail = styled.div`
   }
 
   .image-wrapper {
+    position: relative;
     width: 100%;
     overflow: hidden;
     transition: 250ms ease transform;
@@ -104,8 +107,17 @@ const Thumbnail = styled.div`
     aspect-ratio: 1/1;
 
     @supports not (aspect-ratio: 1/1) {
-      width: 3.2rem;
-      height: 3.2rem;
+      padding-bottom: 100%;
+      overflow: hidden;
+
+      & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     img {
