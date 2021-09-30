@@ -18,6 +18,7 @@ const Link = ({ title, description, thumbnail, link, color, index }) => {
         ref={ref}
         highlightColor={color}
         flip={index % 2}
+        columns={thumbnail ? 2 : 1}
       >
         {thumbnail && (
           <Thumbnail className="top">
@@ -57,7 +58,8 @@ const LinkWrapper = styled.a`
 
   display: grid;
   grid-gap: 1.6rem;
-  grid-template-columns: 8ch minmax(min(50vw, 30ch), 1fr);
+  grid-template-columns: ${({ columns }) =>
+    columns === 1 ? "1fr" : "8ch minmax(min(50vw, 30ch), 1fr)"};
   padding: 1.6rem;
   border: 2px solid var(--highlight);
   background-color: var(--white);
@@ -65,7 +67,8 @@ const LinkWrapper = styled.a`
   text-decoration: none;
 
   &.flip {
-    grid-template-columns: minmax(min(50vw, 30ch), 1fr) 8ch;
+    grid-template-columns: ${({ columns }) =>
+      columns === 1 ? "1fr" : "minmax(min(50vw, 30ch), 1fr) 8ch"};
 
     .top,
     .center,

@@ -10,7 +10,7 @@ const Links = ({ links }) => {
   return (
     <LinksWrapper>
       {links.map((link, index) => {
-        if (link.thumbnail === false) return null;
+        if (link.title === false) return null;
 
         return (
           <Link
